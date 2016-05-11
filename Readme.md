@@ -12,6 +12,16 @@ pool across a cluster.
 monet provides an HTTP API to get a list of installed artworks, add new tasks to
 the queue, query progress, and get intermediate or final results.
 
+# Services
+
+* API Endpoint
+    * [monet-api](https://github.com/toksaitov/monet-api)
+* Task Runner
+    * [monet-agent](https://github.com/toksaitov/monet-agent)
+* [Nerual-Doodle](https://github.com/alexjc/neural-doodle) Docker Container Images
+    * [neural-doodle-cpu](https://github.com/toksaitov/neural-doodle-cpu)
+    * [neural-doodle-gpu](https://github.com/toksaitov/neural-doodle-gpu)
+
 ## Containerization
 
 * `docker-compose build`: to build all *monet* images
