@@ -1,0 +1,12 @@
+{
+  "_id": { "$oid": "572709f8d12a816dfbde7a8b" },
+  "title": "Bouquet of Sunflowers",
+  "author": "Claude Monet",
+  "year": 1881,
+  "image": {
+    "$binary": "$IMAGE_BINARY_DATA"
+  },
+  "map": {
+    "$binary": "$MAP_BINARY_DATA"
+  }
+}
