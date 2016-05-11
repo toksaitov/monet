@@ -1,0 +1,4 @@
+'neural-doodle':
+  image: 'toksaitov/neural-doodle:cpu'
+  volumes:
+    - './data:/data'
