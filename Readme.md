@@ -125,7 +125,7 @@ to manage `hosts` files across services automatically.
 
 * `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
   collection inside the `monet-artwork-db` container and import sample data from
-  the `artworks` directory
+  the `artworks` directory to the service database
 
 * `docker-compose -f docker-compose.yml -f docker-compose.development.yml
    [-f docker-compose.gpu.yml] ...`: to mount the project directory on the host
