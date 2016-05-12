@@ -1,4 +1,8 @@
-'neural-doodle':
-  image: 'toksaitov/neural-doodle:cpu'
-  volumes:
-    - './data:/data'
+version: "2"
+
+services:
+  neural-doodle-cpu:
+    build: "."
+    image: "toksaitov/neural-doodle:cpu"
+    volumes:
+      - "./data:/data"
