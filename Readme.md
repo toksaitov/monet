@@ -21,6 +21,10 @@ final results.
     * [neural-doodle-cpu](https://github.com/toksaitov/neural-doodle-cpu)
     * [neural-doodle-gpu](https://github.com/toksaitov/neural-doodle-gpu)
 
+## Prerequisites
+
+* *Docker*, *Docker Compose* `>= 1.11`, `>= 1.7.0`
+
 ## Containerization
 
 * `docker-compose build`: to build all *monet* images
@@ -38,6 +42,28 @@ final results.
    [-f docker-compose.gpu.yml] ...`: to mount project directories on the host
   machine under project directories inside containers to allow instant source
   changes throughout development without rebuilds.
+
+## Usage
+
+To get a list of artworks available to transfer styles from
+
+```bash
+curl http://0.0.0.0/artworks
+```
+
+To submit a doodle file `doodle.png` for processing
+
+```bash
+(echo -n '{ "artworkID": "572709f8d12a816dfbde7a8b", "map": "'; base64 doodle.png; echo '" }') |
+  curl -H "Content-Type: application/json" -d @- http://0.0.0.0:8080/process
+# {"taskID":"57324350f4fc911100a90241"}
+```
+
+To check the progress and get intermediate or final results
+
+```bash
+curl http://0.0.0.0/tasks/<task ID returned from the previous step>
+```
 
 ## Licensing
 
