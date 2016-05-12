@@ -37,6 +37,10 @@ final results.
 
 * `docker-compose down`: to stop the services
 
+* `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
+  collection inside the `monet-artwork-db` container and import sample data from
+  the `artworks` directory to the service database
+
 * `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
   with the GPU variant of the *neural-doodle* image
 
@@ -56,7 +60,7 @@ final results.
 To get a list of artworks available to transfer styles from
 
 ```bash
-curl http://0.0.0.0/artworks
+curl http://0.0.0.0:8080/artworks
 ```
 
 To submit a doodle file `doodle.png` for processing
@@ -69,7 +73,7 @@ To submit a doodle file `doodle.png` for processing
 To check the progress and get intermediate or final results
 
 ```bash
-curl http://0.0.0.0/tasks/<task ID returned from the previous step>
+curl http://0.0.0.0:8080/tasks/<task ID returned from the previous step>
 ```
 
 ## Licensing
