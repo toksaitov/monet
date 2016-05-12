@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  monet-agent:
+    build:
+      context: "."
+      dockerfile: "Dockerfile.gpu"
