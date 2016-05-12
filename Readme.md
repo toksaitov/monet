@@ -3,6 +3,8 @@ monet
 
 ![Architecture](http://i.imgur.com/DbMzzpQ.png)
 
+![Example](http://i.imgur.com/sz2Viam.jpg)
+
 monet is a distributed image generation system for the
 [neural-doodle](https://github.com/alexjc/neural-doodle) project.
 
