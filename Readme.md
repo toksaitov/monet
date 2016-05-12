@@ -1,8 +1,6 @@
 monet
 =====
 
-![Architecture](http://i.imgur.com/DbMzzpQ.png)
-
 ![Example](http://i.imgur.com/sz2Viam.jpg)
 
 monet is a distributed image generation system for the
@@ -14,6 +12,8 @@ artworks, add new tasks to the queue, query progress, and get intermediate or
 final results.
 
 # Services
+
+![Architecture](http://i.imgur.com/DbMzzpQ.png)
 
 * API Endpoint
     * [monet-api](https://github.com/toksaitov/monet-api)
