@@ -1,14 +1,16 @@
 monet-api
 =========
 
-*monet-api* is an API endpoint for the *monet* service. It works as a front end
-for all clients interested to use the *monet* system.
+*monet-api* is an API endpoint for the [monet](https://github.com/toksaitov/monet)
+system. It works as a front end for all clients interested to use the
+[monet](https://github.com/toksaitov/monet) system.
 
 # Services
 
-*monet-api* is part of the *monet* system to provide a distributed image
-generation back end for the project [Neural Doodle](https://github.com/alexjc/neural-doodle)
-created by [Alex J. Champandard](https://github.com/alexjc).
+*monet-api* is part of the [monet](https://github.com/toksaitov/monet) system to
+provide a distributed image generation back end for the project
+[Neural Doodle](https://github.com/alexjc/neural-doodle) created by
+[Alex J. Champandard](https://github.com/alexjc).
 
 * API Endpoint
     * [monet-api](https://github.com/toksaitov/monet-api)
