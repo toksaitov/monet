@@ -140,6 +140,14 @@ to manage `hosts` files across services automatically.
 
 * `docker-compose down`: to stop the service
 
+* `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
+  with the GPU variant of the *neural-doodle* image
+
+* `docker-compose -f docker-compose.yml -f docker-compose.development.yml
+   [-f docker-compose.gpu.yml]...`: to mount the project directory on the host
+  machine under a project directory inside the container to allow instant source
+  changes throughout development without rebuilds.
+
 ## Licensing
 
 *monet-agent* is licensed under the MIT license. See LICENSE for the full
