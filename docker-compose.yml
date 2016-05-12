@@ -4,8 +4,6 @@ services:
   monet-api:
     build: "./monet-api"
     image: "toksaitov/monet-api"
-    volumes:
-      - "./monet-api:/monet-api"
     ports:
       - "8080:8080"
     links:
@@ -19,8 +17,6 @@ services:
   monet-agent:
     build: "./monet-agent"
     image: "toksaitov/monet-agent:cpu"
-    volumes:
-      - "./monet-agent:/monet-agent"
     links:
       - "monet-etcd-db:monet-discovery-db"
       - "monet-redis-db:monet-queue-db"

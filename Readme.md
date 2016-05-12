@@ -30,12 +30,13 @@ the queue, query progress, and get intermediate or final results.
 
 * `docker-compose down`: to stop the service
 
-* `docker-compose -f docker-compose-gpu.yml <all the commands above>`: to work
-  with the GPU variant of *neural-doodle*
+* `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
+  with the GPU variant of the *neural-doodle* image
 
-Project directories from the host machine are mounted under source directories
-inside containers to allow instant source changes throughout development without
-rebuilds.
+* `docker-compose -f docker-compose.yml -f docker-compose.development.yml
+   [-f docker-compose.gpu.yml]...`: to mount project directories on the host
+  machine under project directories inside containers to allow instant source
+  changes throughout development without rebuilds.
 
 ## Licensing
 

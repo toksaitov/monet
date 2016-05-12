@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  monet-agent:
+    build:
+      context: "./monet-agent"
+      dockerfile: "Dockerfile.gpu"
+    image: "toksaitov/monet-agent:gpu"

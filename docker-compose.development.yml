@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  monet-api:
+    volumes:
+      - "./monet-api:/monet-api"
+
+  monet-agent:
+    volumes:
+      - "./monet-agent:/monet-agent"
