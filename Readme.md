@@ -30,6 +30,10 @@ To build the image
 
     docker build --tag=toksaitov/neural-doodle:cpu .
 
+or with Docker Compose
+
+    docker-compose build
+
 To start the container with an STDIN open and an allocated pseudo-TTY, with a
 volume `/data` inside the container mounted under `./data` on a host
 
