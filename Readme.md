@@ -1,8 +1,6 @@
 monet-api
 =========
 
-![example](http://i.imgur.com/sz2Viam.jpg)
-
 *monet-api* is an API endpoint for the *monet* service. It works as a front end
 for all clients interested to use the *monet* system.
 
