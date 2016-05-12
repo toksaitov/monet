@@ -152,6 +152,10 @@ to manage `hosts` files across services automatically.
   machine under a project directory inside the container to allow instant source
   changes throughout development without rebuilds.
 
+## Docker Hub
+
+[toksaitov/monet-agent](https://hub.docker.com/r/toksaitov/monet-agent)
+
 ## Licensing
 
 *monet-agent* is licensed under the MIT license. See LICENSE for the full
