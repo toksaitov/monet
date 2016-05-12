@@ -72,10 +72,6 @@ To check the progress and get intermediate or final results
 curl http://0.0.0.0/tasks/<task ID returned from the previous step>
 ```
 
-## Docker Hub
-
-[toksaitov/monet-agent](https://hub.docker.com/r/toksaitov/monet-agent)
-
 ## Licensing
 
 *monet* is licensed under the MIT license. See LICENSE for the full license
