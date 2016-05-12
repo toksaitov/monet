@@ -1,16 +1,15 @@
 monet
 =====
 
-![Architecture](http://i.imgur.com/JLtDjC5.png)
+![Architecture](http://i.imgur.com/DbMzzpQ.png)
 
 monet is a distributed image generation system for the
 [neural-doodle](https://github.com/alexjc/neural-doodle) project.
 
 monet uses a task queue and publish/subscribe messaging to scale its workers'
-pool across a cluster.
-
-monet provides an HTTP API to get a list of installed artworks, add new tasks to
-the queue, query progress, and get intermediate or final results.
+pool across a cluster. monet provides an HTTP API to get a list of installed
+artworks, add new tasks to the queue, query progress, and get intermediate or
+final results.
 
 # Services
 
@@ -26,15 +25,17 @@ the queue, query progress, and get intermediate or final results.
 
 * `docker-compose build`: to build all *monet* images
 
-* `docker-compose up`: to start the service
+* `docker-compose up`: to start all services
 
-* `docker-compose down`: to stop the service
+* `docker-compose up -d`: to start the services in the background
+
+* `docker-compose down`: to stop the services
 
 * `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
   with the GPU variant of the *neural-doodle* image
 
 * `docker-compose -f docker-compose.yml -f docker-compose.development.yml
-   [-f docker-compose.gpu.yml]...`: to mount project directories on the host
+   [-f docker-compose.gpu.yml] ...`: to mount project directories on the host
   machine under project directories inside containers to allow instant source
   changes throughout development without rebuilds.
 
