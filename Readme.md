@@ -45,6 +45,12 @@ final results.
   machine under project directories inside containers to allow instant source
   changes throughout development without rebuilds.
 
+## Docker Hub
+
+* [toksaitov/monet-api](https://hub.docker.com/r/toksaitov/monet-api)
+* [toksaitov/monet-agent](https://hub.docker.com/r/toksaitov/monet-agent)
+* [toksaitov/neural-doodle](https://hub.docker.com/r/toksaitov/neural-doodle)
+
 ## Sample Usage
 
 To get a list of artworks available to transfer styles from
@@ -65,6 +71,10 @@ To check the progress and get intermediate or final results
 ```bash
 curl http://0.0.0.0/tasks/<task ID returned from the previous step>
 ```
+
+## Docker Hub
+
+[toksaitov/monet-agent](https://hub.docker.com/r/toksaitov/monet-agent)
 
 ## Licensing
 
