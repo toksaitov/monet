@@ -132,6 +132,10 @@ to manage `hosts` files across services automatically.
   machine under a project directory inside the container to allow instant source
   changes throughout development without rebuilds.
 
+## Docker Hub
+
+[toksaitov/monet-api](https://hub.docker.com/r/toksaitov/monet-api)
+
 ## Licensing
 
 *monet-api* is licensed under the MIT license. See LICENSE for the full license
