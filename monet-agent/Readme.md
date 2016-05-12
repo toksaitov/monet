@@ -1,7 +1,8 @@
 monet-agent
 ===========
 
-*monet-agent* is a task queue service for the *monet* system.
+*monet-agent* is a task queue service for the [monet](https://github.com/toksaitov/monet)
+system.
 
 *monet-agent* periodically checks a task queue database for new tasks, fetches
 one if available, gets associated data from a task database, starts
@@ -12,9 +13,10 @@ up and start its work immediately.
 
 # Services
 
-*monet-api* is part of the *monet* system to provide a distributed image
-generation back end for the project [Neural Doodle](https://github.com/alexjc/neural-doodle)
-created by [Alex J. Champandard](https://github.com/alexjc).
+*monet-api* is part of the [monet](https://github.com/toksaitov/monet) system to
+provide a distributed image generation back end for the project
+[Neural Doodle](https://github.com/alexjc/neural-doodle) created by
+[Alex J. Champandard](https://github.com/alexjc).
 
 * API Endpoint
     * [monet-api](https://github.com/toksaitov/monet-api)
