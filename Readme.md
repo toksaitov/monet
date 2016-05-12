@@ -119,10 +119,18 @@ to manage `hosts` files across services automatically.
 
 * `docker-compose up`: to start the service
 
+* `docker-compose up -d`: to start the service in the background
+
 * `docker-compose down`: to stop the service
 
-* `docker exec monet_monet-api_1 npm run gulp`: to recreate the `mongo` database
-  inside its container and import sample data from the `artworks` directory
+* `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
+  collection inside the `monet-artwork-db` container and import sample data from
+  the `artworks` directory
+
+* `docker-compose -f docker-compose.yml -f docker-compose.development.yml
+   [-f docker-compose.gpu.yml] ...`: to mount the project directory on the host
+  machine under a project directory inside the container to allow instant source
+  changes throughout development without rebuilds.
 
 ## Licensing
 
