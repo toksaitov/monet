@@ -76,11 +76,19 @@ intermediate or final results.
 {
   "id": "a unique task ID",
   "artworkID": "a unique artwork ID used to generate a new picture",
+  "state": "queued|started|failed|finished",
   "progress": 1.0,
+  "queued": "date and time the task was queued",
+  "started": "date and time the task was picked by an agent for processing",
+  "finished": "date and time the task was finished",
   "images": [
     "intermediate image as a Base64 string",
     "intermediate image with higher resolution as a Base64 string",
     "final image as a Base64 string"
+  ],
+  "processErrors": [
+    "an error encountered during processing",
+    "another error encountered during processing"
   ]
 }
 ```

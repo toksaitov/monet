@@ -111,7 +111,9 @@ function getArtworks(onResultCallback) {
     ArtworkDatabase.model("Artwork");
 
   Artwork.find((error, documents) => {
-    let jsonDocuments = null;
+    let jsonDocuments =
+      null;
+
     if (documents) {
       jsonDocuments =
         documents.map(document => document.toObject());
@@ -131,7 +133,9 @@ function getArtwork(artworkID, onResultCallback) {
 function createNewTask(artworkID, encodedSemanticMap, onResultCallback) {
   getArtwork(artworkID, (error, artwork) => {
     if (error || !artwork) {
-      return onResultCallback(error);
+      onResultCallback(error);
+
+      return;
     }
 
     let Task =
@@ -143,20 +147,24 @@ function createNewTask(artworkID, encodedSemanticMap, onResultCallback) {
       artwork.map;
     let outputSemanticMap =
       new Buffer(encodedSemanticMap, "base64");
+
     let iterations =
-      40;
+      20;
+    let saveEvery =
+      5;
 
     let task =
       new Task({
         "artwork_id":
-          mongoose.Types.ObjectId(artworkID),
+          new mongoose.Types.ObjectId(artworkID),
         "inputs": [
           style,
           styleSemanticMap,
           outputSemanticMap
         ],
         "arguments": [
-          `--iterations=${iterations}`
+          `--iterations=${iterations}`,
+          `--save-every=${saveEvery}`
         ]
       });
 
@@ -171,7 +179,9 @@ function getTask(taskID, onResultCallback) {
     TaskDatabase.model("Task");
 
   Task.findById(taskID, (error, document) => {
-    let jsonDocument = null;
+    let jsonDocument =
+      null;
+
     if (document) {
       jsonDocument =
         document.toObject();
@@ -340,7 +350,7 @@ Server.get("/tasks/:id", (request, response) => {
   }
 
   getTask(taskID, (error, task) => {
-    if (error) {
+    if (error || !task) {
       processError({
         "code": 400,
         "response": "Invalid task ID.",
