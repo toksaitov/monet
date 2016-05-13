@@ -5,8 +5,8 @@ monet-agent
 system.
 
 *monet-agent* periodically checks a task queue database for new tasks, fetches
-one if available, gets associated data from a task database, starts
-a long running style transfer process with [neural-doodle](https://github.com/alexjc/neural-doodle),
+one if available, gets associated data from a task database, starts a long
+running style transfer process with [neural-doodle](https://github.com/alexjc/neural-doodle),
 and periodically saves progress information with intermediate results back to
 the task database. *monet-agent* can also listen to task queue events, to wake
 up and start its work immediately.
@@ -37,7 +37,7 @@ provide a distributed image generation back end for the project
 ## Configuration
 
 *monet-agent* tries to load a configuration files in the JSON format in the
-current working directory under the name *monet-agent-configuration.json*
+current working directory under the name *monet-agent-configuration.json*.
 
 ### Configuration Format
 
