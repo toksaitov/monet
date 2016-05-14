@@ -92,14 +92,14 @@ current working directory under the name *monet-agent-configuration.json*.
   "periodicDelay": 1000,
   "databases": {
     "service": {
-      "hosts": ["0.0.0.0:2379"]
+      "hosts": ["localhost:2379"]
     },
     "queue": {
-      "host": "0.0.0.0",
+      "host": "localhost",
       "port": "6379"
     },
     "task": {
-      "url": "mongodb://0.0.0.0:27017/monet"
+      "url": "mongodb://localhost:27017/monet"
     }
   },
   "programs": {
@@ -115,18 +115,21 @@ current working directory under the name *monet-agent-configuration.json*.
 
 ## Interconnection
 
-By default the `host` field in connection options for the task and queue
-databases will be set to the following values
+By default the `host` field in connection options for the queue and task
+databases will be set to *monet-queue-db* and *monet-task-db* respectively.
 
-* *monet-queue-db*: resolve it to an instance of a Redis database with a task
+Ensure that the hosts can be resolved into IP addresses of the actual
+services on your setup
+
+* *monet-queue-db*: resolve to an instance of a Redis database with a task
   queue
 
-* *monet-task-db*: resolve it to an instance of a Mongo database with a
+* *monet-task-db*: resolve to an instance of a Mongo database with a
   collection of tasks
 
 There are many approaches that you can use for name resolution. You can add
 entries to `/etc/hosts` manually, setup a DNS server or utilize Docker Networks
-to manage `hosts` files across services automatically.
+to manage `/etc/hosts` files across containers automatically.
 
 ## Usage
 
