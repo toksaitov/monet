@@ -6,10 +6,6 @@ services:
     image: "toksaitov/monet-api"
     ports:
       - "8080:8080"
-    links:
-      - "monet-redis-db:monet-queue-db"
-      - "monet-mongo-db:monet-task-db"
-      - "monet-mongo-db:monet-artwork-db"
     depends_on:
       - "monet-redis-db"
       - "monet-mongo-db"
@@ -17,10 +13,6 @@ services:
   monet-agent:
     build: "./monet-agent"
     image: "toksaitov/monet-agent:cpu"
-    links:
-      - "monet-etcd-db:monet-discovery-db"
-      - "monet-redis-db:monet-queue-db"
-      - "monet-mongo-db:monet-task-db"
     depends_on:
       - "monet-etcd-db"
       - "monet-redis-db"
@@ -28,7 +20,20 @@ services:
 
   monet-etcd-db:
     image: "quay.io/coreos/etcd:v2.3.3"
+    networks:
+      default:
+        aliases:
+          - "monet-discovery-db"
   monet-redis-db:
     image: "redis:3.0.7"
+    networks:
+      default:
+        aliases:
+          - "monet-queue-db"
   monet-mongo-db:
     image: "mongo:3.2.6"
+    networks:
+      default:
+        aliases:
+          - "monet-task-db"
+          - "monet-artwork-db"

@@ -60,20 +60,20 @@ final results.
 To get a list of artworks available to transfer styles from
 
 ```bash
-curl http://0.0.0.0:8080/artworks
+curl http://localhost:8080/artworks
 ```
 
 To submit a doodle file `doodle.png` for processing
 
 ```bash
 (echo -n '{ "artworkID": "<some artwork ID returned from the previous step>", "map": "'; base64 doodle.png; echo '" }') |
-  curl -H "Content-Type: application/json" -d @- http://0.0.0.0:8080/process
+  curl -H "Content-Type: application/json" -d @- http://localhost:8080/process
 ```
 
 To check the progress and get intermediate or final results
 
 ```bash
-curl http://0.0.0.0:8080/tasks/<task ID returned from the previous step>
+curl http://localhost:8080/tasks/<task ID returned from the previous step>
 ```
 
 ## Licensing
