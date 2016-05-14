@@ -100,17 +100,18 @@ Progress information is passed as a number between 0 and 1.0.
 Ensure that the following hosts can be resolved into IP addresses of the actual
 services on your setup
 
-* *monet-queue-db*: to an instance of a Redis database with a task queue
+* *monet-queue-db*: resolve to an instance of a Redis database with a task
+  queue
 
-* *monet-task-db*: to an instance of a Mongo database with a collection of
-  tasks
+* *monet-task-db*: resolve to an instance of a Mongo database with a collection
+  of tasks
 
-* *monet-artwork-db*: to an instance of a Mongo database with a collection of
-  artworks
+* *monet-artwork-db*: resolves to an instance of a Mongo database with a
+  collection of artworks
 
 There are many approaches that you can use for name resolution. You can add
 entries to `/etc/hosts` manually, setup a DNS server or utilize Docker Networks
-to manage `hosts` files across services automatically.
+to manage `/etc/hosts` files across containers automatically.
 
 ## Usage
 
