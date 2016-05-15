@@ -29,8 +29,6 @@ final results.
 
 ## Containerization
 
-* `docker-compose build`: to build all *monet* images
-
 * `docker-compose up`: to start all services
 
 * `docker-compose up -d`: to start the services in the background
@@ -39,7 +37,9 @@ final results.
 
 * `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
   collection inside the `monet-artwork-db` container and import sample data from
-  the `artworks` directory to the service database
+  the `artworks` directory to the service database. Note that the name
+  `monet_monet-api_1` of the API container could be different depending on your
+  Docker setup, ensure to check the output of `docker ps` for a correct name.
 
 * `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
   with the GPU variant of the *neural-doodle* image
@@ -48,6 +48,19 @@ final results.
    [-f docker-compose.gpu.yml] ...`: to mount project directories on the host
   machine under project directories inside containers to allow instant source
   changes throughout development without rebuilds.
+
+## Working in a Swarm Cluster Environment
+
+* `docker-compose pull`: to download pre-built images from Docker Hub on every
+  node
+
+* `docker-compose up [-d]`: to start all services
+
+* `docker exec <name of any monet-api container> npm run gulp`: to import sample
+ data from the `artworks` directory to the service database
+
+* `docker-compose scale monet-agent=<number of instances>`: to start a specific
+  number of instances of the *monet-agent* and spread them across the cluster
 
 ## Docker Hub
 
