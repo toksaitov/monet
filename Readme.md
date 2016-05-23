@@ -47,7 +47,7 @@ final results.
 * `docker-compose -f docker-compose.yml -f docker-compose.development.yml
    [-f docker-compose.gpu.yml] ...`: to mount project directories on the host
   machine under project directories inside containers to allow instant source
-  changes throughout development without rebuilds.
+  changes throughout development without rebuilds
 
 ## Working in a Swarm Cluster Environment
 
@@ -87,6 +87,16 @@ To check the progress and get intermediate or final results
 
 ```bash
 curl http://localhost:8080/tasks/<task ID returned from the previous step>
+```
+
+On Windows and OS X setups with Docker Toolbox replace *localhost* with an IP
+address of a virtual machine used by Docker.
+
+For example, to get an IP address of the default Docker virtual machine,
+execute the following
+
+```bash
+docker-machine ip default
 ```
 
 ## Licensing
