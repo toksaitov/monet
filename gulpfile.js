@@ -87,7 +87,7 @@ function importArtwork(artworkDirectory, onFinishCallback) {
     JSON.parse(fs.readFileSync(artworkFile, "utf8"));
 
   artworkData["_id"] =
-    mongoose.Types.ObjectId(artworkData["_id"]["$oid"]);
+    new mongoose.Types.ObjectId(artworkData["_id"]["$oid"]);
   artworkData["image"] =
     imageData;
   artworkData["map"] =
@@ -104,7 +104,6 @@ function importArtwork(artworkDirectory, onFinishCallback) {
   artwork.save(error => {
     if (error) {
       console.error(error);
-
       throw error;
     }
 
