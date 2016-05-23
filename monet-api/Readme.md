@@ -117,14 +117,12 @@ to manage `/etc/hosts` files across containers automatically.
 
 * `npm install`: to install dependencies
 
-* `npm run gulp`: to recreate the `mongo` database and import sample data
-  from the `artworks` directory
+* `npm run gulp`: to recreate the `artworks` collection and import sample data
+  from the `artworks` directory to the service database
 
 * `npm start`: to start the server
 
 ## Containerization
-
-* `docker-compose build`: to build the *monet-api* image
 
 * `docker-compose up`: to start the service
 
@@ -132,14 +130,14 @@ to manage `/etc/hosts` files across containers automatically.
 
 * `docker-compose down`: to stop the service
 
-* `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
+* `docker-compose exec monet-api npm run gulp`: to recreate the `artworks`
   collection inside the `monet-artwork-db` container and import sample data from
   the `artworks` directory to the service database
 
 * `docker-compose -f docker-compose.yml -f docker-compose.development.yml
    [-f docker-compose.gpu.yml] ...`: to mount the project directory on the host
   machine under a project directory inside the container to allow instant source
-  changes throughout development without rebuilds.
+  changes throughout development without rebuilds
 
 ## Docker Hub
 
