@@ -35,11 +35,9 @@ final results.
 
 * `docker-compose down`: to stop the services
 
-* `docker exec monet_monet-api_1 npm run gulp`: to recreate the `artworks`
+* `docker-compose exec monet-api npm run gulp`: to recreate the `artworks`
   collection inside the `monet-artwork-db` container and import sample data from
-  the `artworks` directory to the service database. Note that the name
-  `monet_monet-api_1` of the API container could be different depending on your
-  Docker setup, ensure to check the output of `docker ps` for a correct name.
+  the `artworks` directory to the service database
 
 * `docker-compose -f docker-compose.yml -f docker-compose.gpu.yml ...`: to work
   with the GPU variant of the *neural-doodle* image
@@ -56,8 +54,8 @@ final results.
 
 * `docker-compose up [-d]`: to start all services
 
-* `docker exec <name of any monet-api container> npm run gulp`: to import sample
- data from the `artworks` directory to the service database
+* `docker-compose exec monet-api npm run gulp`: to import sample
+  data from the `artworks` directory to the service database
 
 * `docker-compose scale monet-agent=<number of instances>`: to start a specific
   number of instances of the *monet-agent* and spread them across the cluster
